@@ -1,25 +1,14 @@
 local fs = require("@lute/fs")
 local glob = require("./glob")
+local rmdir = require("../rmdir")
 
 type Folder = { [string]: Hierarchy }
 type Hierarchy = "file" | Folder
 
-local function rmdir_recursive(path: string)
-	for _, entry in fs.listdir(path) do
-		local child = path .. "/" .. entry.name
-		if entry.type == "dir" then
-			rmdir_recursive(child)
-		else
-			fs.remove(child)
-		end
-	end
-	fs.rmdir(path)
-end
-
 local function test(name: string, folder: Folder, absolute_path: string, expected_paths: { string })
 	-- Create temporary hierarchy in the filesystem
 	local root = "./test-hierarchy"
-	pcall(rmdir_recursive, root)
+	pcall(rmdir, root)
 	fs.mkdir(root)
 	do
 		local function visit(folder: Folder, on_disk: string)
@@ -261,5 +250,5 @@ test(
 )
 
 -- Cleanup
-pcall(rmdir_recursive, "./test-hierarchy")
+pcall(rmdir, "./test-hierarchy")
 print("All glob tests done.")

@@ -1,0 +1,7 @@
+[package]
+name = "VendingMachine"
+files = []
+publish = false
+
+[dependencies]
+test1 = { path = ".././example/single-package/rotriever.toml" }
