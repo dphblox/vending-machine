@@ -5,4 +5,8 @@ files = ["*", "!*.spec.lua", "!*.story.lua"]
 publish = true
 authors = ["Daniel P H Fox <174147186+dphblox@users.noreply.github.com>"]
 
+[config]
+registry_index = true
+
 [dependencies]
+React = "17.0"

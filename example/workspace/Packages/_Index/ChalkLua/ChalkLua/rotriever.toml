@@ -1,0 +1,23 @@
+[package]
+name = "ChalkLua"
+version = "0.3.0"
+readme = "README.md"
+content_root = "src"
+files = ["*"]
+publish = true
+authors = [
+    "Raymond Ng <rng@roblox.com>",
+    "Chris Trzesniewski <k.trzesniewski@gmail.com>",
+]
+license = "MIT"
+description = "A Luau port of the open source terminal string styling library."
+repository = "https://github.com/Roblox/chalk-lua-internal"
+keywords = [
+    "color",
+    "terminal",
+    "string",
+    "style",
+]
+[dev_dependencies.TestEZ]
+target = "https://github.com/roblox/testez"
+version = "^0.4.1"

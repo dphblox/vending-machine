@@ -1,4 +1,5 @@
 local fs = require("@lute/fs")
+local path = require("@std/path")
 
 local function matches(pattern: string, name: string, pi: number?, ni: number?): boolean
 	local pattern_index = pi or 1
@@ -106,7 +107,8 @@ local function walk(dir: string, components: { string }, ci: number, results: { 
 	end
 end
 
-local function glob(absolute_path: string): { string }
+local function glob(absolute_path: path.pathlike): { string }
+	absolute_path = path.format(absolute_path)
 	local components = string.split(absolute_path, "/")
 	local split_at = #components + 1
 	for i, comp in components do

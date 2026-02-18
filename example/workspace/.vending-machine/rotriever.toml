@@ -1,9 +1,0 @@
-[package]
-name = "VendingMachine"
-files = []
-publish = false
-
-[dependencies]
-test1 = { path = ".././example/workspace/modules/ModuleA" }
-test2 = { path = ".././example/workspace/modules/ModuleB" }
-test3 = { path = ".././example/workspace/modules/ModuleC" }
