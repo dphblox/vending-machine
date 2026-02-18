@@ -1,0 +1,8 @@
+[package]
+name = "ModuleC"
+version = "0.1.0"
+files = ["*", "!*.spec.lua", "!*.story.lua"]
+publish = true
+authors = ["Daniel P H Fox <174147186+dphblox@users.noreply.github.com>"]
+
+[dependencies]
